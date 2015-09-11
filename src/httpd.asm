@@ -21,7 +21,7 @@ lf                        db 10
 ; the buffer to read the client request, in this application we only read and show the contents of such a request.
 ; Sometimes there is interesting info in it.  In more advanced webserver applications we need to parse the required
 ; page, serve the page and eventually perform cgi scripts.
-buffer:                   times 1024 db 0
+buffer:                   times 16 db 0
 .length: equ $-buffer
  
 ; A full webserver reply 200.  We can send other pages too. A full list of status codes can be found at
@@ -31,9 +31,9 @@ reply:               ;   db 'HTTP/1.1 301 Moved Permanently', 10
                      ;   db 'Location: http://www.agguro.be/index.php', 10, 10   <-- example of redirect -->
                      
                         db 'HTTP/1.1 200 OK',10
-                        db 'Content-length: 11',10                   ; the length of the webpage we will send back, calculated last-first+1
+                        db 'Content-length: 16',10                   ; the length of the webpage we will send back, calculated last-first+1
                         db 'Content-Type: text/html',10,10            ; the content type
-                        db 'Hello World'
+                        db 'HTTP Hello World'
 reply.length:           equ $-reply
  
 port:                   db 0,80           ; port 4444 (256 * 17 + 92)
