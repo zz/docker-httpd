@@ -4,6 +4,14 @@ I write a sample httpd server with X64 assembly, so It can build with a Docker i
 
 If you try yourself, first run `make` in src directory, then build Docker image with Dockerfile
 
+try with Public Docker Hub ready image
+
+```
+docker run -d -p 8000:80 zhuzhu/tinyhttpd
+```
+
+or build by yourself
+
 ```
 docker build --no-cache -t httpd:tiny .
 ```
