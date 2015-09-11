@@ -31,8 +31,8 @@ reply:               ;   db 'HTTP/1.1 301 Moved Permanently', 10
                      ;   db 'Location: http://www.agguro.be/index.php', 10, 10   <-- example of redirect -->
                      
                         db 'HTTP/1.1 200 OK',10
-                        db 'Content-length: 14',10                   ; the length of the webpage we will send back, calculated last-first+1
-                        db 'Content-Type: text/html',11,10            ; the content type
+                        db 'Content-length: 11',10                   ; the length of the webpage we will send back, calculated last-first+1
+                        db 'Content-Type: text/html',10,10            ; the content type
                         db 'Hello World'
 reply.length:           equ $-reply
  
