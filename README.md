@@ -1,4 +1,4 @@
-# A tiny (1.9 KB) httpd web server Docker Image Sample
+# A tiny (936B) httpd web server Docker Image Sample
 
 I write a sample httpd server with X64 assembly, so It can build with a Docker image and run with docker daemon.
 
